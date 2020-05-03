@@ -7,6 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskToDoComponent implements OnInit {
 
+  taskToDo = [
+    {
+      name: 'Tester liaison des donées'
+    },
+    {
+      name: 'Programmer action des boutons'
+    },
+    {
+      name: 'Ajouter une animation lors validation tâche à faire'
+    },
+    {
+      name: 'Ajouter la date et l\'heure de la création de la tâche'
+    },
+    {
+      name: 'Travailler le rendu visuel + responsive'
+    },
+    {
+      name: 'Tester la transformation en PWA'
+    }
+  ];
+
   constructor() { }
 
   ngOnInit(): void {

@@ -1,1 +1,12 @@
-<p>task-to-do works!</p>
+<div *ngFor="let obj of taskToDo" class="row">
+  <p class="col-sm-6 col-12">{{obj.name}}</p>
+  <i class="material-icons d-flex justify-content-center col-sm-2 col-4">
+    edit
+  </i>
+  <i class="material-icons d-flex justify-content-center col-sm-2 col-4">
+    delete_forever
+  </i>
+  <i class="material-icons d-flex justify-content-center col-sm-2 col-4">
+    done_outline
+  </i>
+</div>

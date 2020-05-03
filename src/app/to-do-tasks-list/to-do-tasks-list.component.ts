@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToDoTasksListComponent implements OnInit {
 
+  title = 'Tâches à faire';
   constructor() { }
 
   ngOnInit(): void {
