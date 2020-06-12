@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { AddTaskComponent } from './add-task/add-task.component';
 import { ToDoTasksListComponent } from './to-do-tasks-list/to-do-tasks-list.component';
 import { DoneTasksListComponent } from './done-tasks-list/done-tasks-list.component';
 import { TaskDoneComponent } from './task-done/task-done.component';
@@ -16,7 +16,7 @@ import { ContentComponent } from './content/content.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    NavbarComponent,
+    AddTaskComponent,
     ToDoTasksListComponent,
     DoneTasksListComponent,
     TaskDoneComponent,
