@@ -38,17 +38,17 @@ export class TaskService {
     return this.taskArray.push({name: str, doneStatus: false});
   }
 
-  doneTaskStatus(i: number) {
-    return this.taskArray.find[i].doneStatus = true;
-  }
+  // doneTaskStatus(i: number) {
+  //   return this.taskArray.find[i].doneStatus = true;
+  // }
 
-  updateTask(str: string, i: number) {
-    return this.taskArray.find[i].name = str;
-  }
+  // updateTask(str: string, i: number) {
+  //   return this.taskArray.find[i].name = str;
+  // }
 
-  deleteTask(i: number) {
-    return this.taskArray.splice(0);
-  }
+  // deleteTask(i: number) {
+  //   return this.taskArray.splice(0);
+  // }
 
 
 }

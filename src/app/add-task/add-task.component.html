@@ -10,10 +10,10 @@
     </button>
   </div>
 </div>
+
 <div class="row">
   <div class="col-12">
-    <form #f="ngForm">
-      <!-- <form (ngSubmit)="onAddTask(f)" #f="ngForm"></form> -->
+    <form (ngSubmit)="onAddTask(f)" #f="ngForm">
       <fieldset>
         <div class="form-group">
           <label name="taskToAdd">
