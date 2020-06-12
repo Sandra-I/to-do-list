@@ -5,13 +5,25 @@ import { Injectable } from '@angular/core';
 })
 export class TaskService {
 
-  taskArray = [
+  private taskArray = [
     {
       name : "Service ok",
       doneStatus : false
     },
     {
       name : "Service 2 ok",
+      doneStatus : false
+    },
+    {
+      name : "Service 3 ok",
+      doneStatus : true
+    },
+    {
+      name : "Service 4 ok",
+      doneStatus : true
+    },
+    {
+      name : "Service 5 ok",
       doneStatus : false
     }
   ]

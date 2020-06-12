@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TaskDoneComponent implements OnInit {
 
   @Input() name: string;
+  @Input() status: boolean;
 
   constructor() { }
 

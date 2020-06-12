@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TaskService } from '../service/task.service';
 
 @Component({
   selector: 'tdl-done-tasks-list',
@@ -9,12 +10,13 @@ export class DoneTasksListComponent implements OnInit {
 
   title = 'Tâches faites';
 
-  taskName: string;
+  taskArray: any[];
 
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
-    this.taskName = "Pas de tâches terminées";
+    // this.taskName = "Pas de tâches terminées";
+    this.taskArray = this.taskService.getTaskArray();
   }
 
 }

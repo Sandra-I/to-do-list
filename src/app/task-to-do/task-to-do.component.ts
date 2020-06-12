@@ -8,16 +8,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class TaskToDoComponent implements OnInit {
 
   @Input() name: string;
+  @Input() status: string;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
-  // public addTask(name: string): string {
-  //   this.name = name;
-  //   console.log("Task to do" + this.name);
-  //   return this.name;
-  // }
 
 }

@@ -22,6 +22,14 @@ export class AddTaskComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public onAddTask(form: NgForm): string {
+    this.taskToAdd = form.value['taskToAdd'];
+    //this.cli.emit(this.taskToAdd);
+    //this.cli.emit();
+    console.log(form.value['taskToAdd']);
+    return this.taskToAdd;
+  }
+
   // A retravailler
   // public onAddTask(form: NgForm): string {
   //   this.taskToAdd = form.value['taskToAdd'];

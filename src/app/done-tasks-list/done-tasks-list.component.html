@@ -8,8 +8,9 @@
     <ul class="list-group list-group-flush">
       <!-- intégrer ngFor sur liste des tâches -->
       <tdl-task-done
-      class="list-group-item"
-      [name]="taskName"
+      *ngFor="let task of taskArray; let i = index"
+      [name]="task.name"
+      [status]="task.doneStatus"
       ></tdl-task-done>
     </ul>
   </div>
