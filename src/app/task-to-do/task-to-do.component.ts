@@ -7,21 +7,17 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class TaskToDoComponent implements OnInit {
 
-  @Input()
-  taskToDo: string;
-
-  tasksToDo: string[];
-
-  public addTask(name: string): string {
-    this.taskToDo = name;
-    console.log("Task to do" + this.taskToDo);
-    return this.taskToDo;
-  }
+  @Input() name: string;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.taskToDo = "Aucune tâche à réaliser pour le moment !"
   }
+
+  // public addTask(name: string): string {
+  //   this.name = name;
+  //   console.log("Task to do" + this.name);
+  //   return this.name;
+  // }
 
 }

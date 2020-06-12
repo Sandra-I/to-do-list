@@ -1,16 +1,18 @@
-<p>{{taskToDo}}</p>
+<div class="row">
+  <div class="col-sm-8">
+    <p>{{name}}</p>
+  </div>
 
-<!-- <div *ngFor="let obj of tasks
-  ToDo" class="row">
-  <p class="col-sm-6 col-12">{{obj.name}}</p>
-  <button type="button" class="btn btn-outline-primary btn-lg col-sm-2 col-4"><i class="material-icons d-flex justify-content-center">
-    edit
-  </i></button>
-  <button type="button" class="btn btn-outline-primary btn-lg col-sm-2 col-4"><i class="material-icons d-flex justify-content-center">
-    delete_forever
-  </i></button>
-  <button type="button" class="btn btn-outline-primary btn-lg col-sm-2 col-4"><i class="material-icons d-flex justify-content-center">
-    done_outline
-  </i></button>
-
-</div> -->
+  <!-- Penser à gèrer l'affichage de ce bloc si tâche ajoutée -->
+  <div class="col-sm-4">
+    <button type="button" class="btn btn-outline-primary btn-lg col-sm-4"><i class="material-icons d-flex justify-content-center">
+      edit
+    </i></button>
+    <button type="button" class="btn btn-outline-primary btn-lg col-sm-4"><i class="material-icons d-flex justify-content-center">
+      delete_forever
+    </i></button>
+    <button type="button" class="btn btn-outline-primary btn-lg col-sm-4"><i class="material-icons d-flex justify-content-center">
+      done_outline
+    </i></button>
+  </div>
+</div>

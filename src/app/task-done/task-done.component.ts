@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'tdl-task-done',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./task-done.component.scss']
 })
 export class TaskDoneComponent implements OnInit {
+
+  @Input() name: string;
 
   constructor() { }
 

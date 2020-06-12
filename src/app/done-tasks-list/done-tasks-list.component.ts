@@ -8,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class DoneTasksListComponent implements OnInit {
 
   title = 'Tâches faites';
+
+  taskName: string;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.taskName = "Pas de tâches terminées";
   }
 
 }

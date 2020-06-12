@@ -2,7 +2,7 @@
   <div class="col-12">
     <button type="button" class="btn btn-primary btn-lg btn-block">
       <span class="h2">
-        {{navbar.title}}
+        {{title}}
         <i class="material-icons">
           library_add
         </i>
@@ -12,17 +12,17 @@
 </div>
 <div class="row">
   <div class="col-12">
-    <form (ngSubmit)="onAddTask(f)" #f="ngForm">
+    <form #f="ngForm">
+      <!-- <form (ngSubmit)="onAddTask(f)" #f="ngForm"></form> -->
       <fieldset>
         <div class="form-group">
           <label name="taskToAdd">
             Nouvelle tâche :
           </label>
-          <input type="text" class="form-control" id="taskToAdd" name="taskToAdd" aria-describedby="taskFieldHelp" placeholder="Une tâche à faire" required ngModel>
+          <input type="text" class="form-control" id="taskToAdd" name="taskToAdd" aria-describedby="taskFieldHelp" placeholder="Une tâche à faire" required [ngModel]="taskToAdd">
         </div>
       </fieldset>
       <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Ajouter</button>
-      <!-- <button type="submit" class="btn btn-primary" (click)="onAddTask($event)">Ajouter</button> -->
     </form>
   </div>
 </div>

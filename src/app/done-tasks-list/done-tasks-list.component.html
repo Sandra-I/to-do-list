@@ -6,7 +6,11 @@
 <div class="row">
   <div class="col-sm-12">
     <ul class="list-group list-group-flush">
-      <tdl-task-done class="list-group-item"></tdl-task-done>
+      <!-- intégrer ngFor sur liste des tâches -->
+      <tdl-task-done
+      class="list-group-item"
+      [name]="taskName"
+      ></tdl-task-done>
     </ul>
   </div>
 </div>
