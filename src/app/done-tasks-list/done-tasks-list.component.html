@@ -1,0 +1,17 @@
+<div class="row">
+  <span class="col-sm-12 d-flex justify-content-center">
+    <h3>{{title}}</h3>
+  </span>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <ul class="list-group list-group-flush">
+      <!-- intégrer ngFor sur liste des tâches -->
+      <tdl-task-done
+      *ngFor="let task of taskArray; let i = index"
+      [name]="task.name"
+      [status]="task.doneStatus"
+      [id]="task.id"></tdl-task-done>
+    </ul>
+  </div>
+</div>

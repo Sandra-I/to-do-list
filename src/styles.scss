@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+/* Importing variables from src. */
+@import "./variables";
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+/* Importing pulse theme. */
+@import "../node_modules/bootswatch/dist/pulse/bootswatch";

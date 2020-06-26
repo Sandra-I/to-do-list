@@ -1,0 +1,18 @@
+li {
+  list-style: none;
+}
+
+.list-group-item {
+  background-color: #D1C4E9 !important;
+  border-bottom: medium solid #E0E0E0 !important;
+}
+
+p {
+  color: black;
+  font-size: 1.5em !important;
+  font-weight: bold;
+}
+
+button:not(#lastButton) {
+  color: #212121;
+}
