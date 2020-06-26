@@ -8,14 +8,16 @@ import { TaskService } from '../service/task.service';
 })
 export class ToDoTasksListComponent implements OnInit {
 
+  // Titre du compo
   title = 'Tâches à faire';
 
+  // Attribut où on va stocker le tableau récupérer du service
   taskArray: any[];
 
   constructor(private taskService: TaskService) { }
 
+  // A la création du compo on récupère le tableau de tâches
   ngOnInit(): void {
-    // this.taskName = "Aucune tâche à réaliser pour le moment !";
     this.taskArray = this.taskService.getTaskArray();
   }
 

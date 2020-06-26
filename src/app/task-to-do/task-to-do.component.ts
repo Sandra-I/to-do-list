@@ -12,9 +12,19 @@ export class TaskToDoComponent implements OnInit {
   @Input() status: string;
   @Input() id: number;
 
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
+  }
+
+  // Méthode pour changer le statut d'une tâche
+  changeStatus(id: number) {
+    this.taskService.doneTaskStatus(id);
+  }
+
+  // Méthode pour supprimer une tâche de la liste
+  removeTask(id: number) {
+    this.taskService.deleteTask(id);
   }
 
 }

@@ -1,8 +1,8 @@
 <li *ngIf="!status" class="list-group-item">
   <div class="row">
+
     <div class="col-sm-8">
-      <p>{{name}}</p>
-      <p>Tâche n° : {{id}}</p>
+      <p>{{name}} | Tâche n° : {{id}}</p>
     </div>
 
     <!-- Penser à gèrer l'affichage de ce bloc si tâche ajoutée -->
@@ -12,13 +12,16 @@
        type="button" class="btn btn-outline-primary btn-lg col-sm-4"><i class="material-icons d-flex justify-content-center">
         edit
       </i></button>
-      <!-- Bouton Supprimer -->
+
+      <!-- Bouton supprimer tâche -->
       <button
-       type="button" class="btn btn-outline-primary btn-lg col-sm-4"><i class="material-icons d-flex justify-content-center">
+       type="button" class="btn btn-outline-primary btn-lg col-sm-4"
+       (click)="removeTask(id)"><i class="material-icons d-flex justify-content-center">
         delete_forever
       </i></button>
-      <!-- Bouton Tâche faite -->
-      <button type="button" class="btn btn-outline-primary btn-lg col-sm-4"><i class="material-icons d-flex justify-content-center">
+
+      <!-- Bouton tâche faite -->
+      <button type="button" class="btn btn-outline-primary btn-lg col-sm-4" id="lastButton" ><i class="material-icons d-flex justify-content-center">
         done_outline
       </i></button>
     </div>

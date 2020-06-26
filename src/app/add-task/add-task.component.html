@@ -21,7 +21,7 @@
             <div class="form-group row">
               <label for="taskToAdd" class="col-12 col-md-2 col-form-label">Nouvelle tâche :</label>
               <div class="col-12 col-md-9">
-                <input type="text" class="form-control" id="taskToAdd" name="taskToAdd" aria-describedby="taskFieldHelp" placeholder="Une tâche à faire" required ngModel>
+                <input type="text" class="form-control" id="taskToAdd" name="taskToAdd" aria-describedby="taskFieldHelp" placeholder="Une tâche à faire" required [(ngModel)]="taskToAdd">
               </div>
               <button type="submit" class="btn btn-primary col-12 col-md-1" [disabled]="f.invalid">Ajouter</button>
             </div>

@@ -48,15 +48,19 @@ export class TaskService {
     this.taskArray.push(newTask);
   }
 
-  editTask(str: string, i: number) {
-    return this.taskArray.find[i].name = str;
+  editTask(str: string, id: number) {
+    return this.taskArray.find[id].name = str;
   }
 
-  deleteTask(i: number) {
-    console.log(this.taskArray.splice(i));
+  // Méthode pour supprimer une tâche définitivement de la liste à faire
+  // Penser à rajouter une alerte pour confirmer le choix
+  deleteTask(id: number) {
+    this.taskArray.splice(id, 1);
+    console.log(this.taskArray);
   }
 
-  doneTaskStatus(i: number) {
-    return this.taskArray.find[i].doneStatus = true;
+  // Méthode pour changer le statut d'un tâche à vrai (donc à true)
+  doneTaskStatus(id: number) {
+    this.taskArray.find[id].doneStatus = true;
   }
 }
