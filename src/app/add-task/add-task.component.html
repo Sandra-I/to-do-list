@@ -1,28 +1,35 @@
 <div class="row">
   <div class="col-12">
-    <button type="button" class="btn btn-primary btn-lg btn-block">
-      <span class="h2">
-        {{title}}
-        <i class="material-icons">
-          library_add
-        </i>
-      </span>
+    <div class="d-flex justify-content-center">
+      <button type="button" class="btn btn-primary btn-md" (click)="isCollapsed = !isCollapsed"
+      [attr.aria-expanded]="isCollapsed" aria-controls="addTaskForm">
+      <p>{{title}}</p>
+      <i class="material-icons">
+        library_add
+      </i>
     </button>
   </div>
 </div>
+</div>
 
-<div class="row">
-  <div class="col-12">
-    <form (ngSubmit)="onAddTask(f)" #f="ngForm">
-      <fieldset>
-        <div class="form-group">
-          <label name="taskToAdd">
-            Nouvelle tâche :
-          </label>
-          <input type="text" class="form-control" id="taskToAdd" name="taskToAdd" aria-describedby="taskFieldHelp" placeholder="Une tâche à faire" required [ngModel]="taskToAdd">
+<div id="collapseExample" [ngbCollapse]="isCollapsed">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <form (ngSubmit)="onAddTask(f)" #f="ngForm">
+            <div class="form-group row">
+              <label for="taskToAdd" class="col-12 col-md-2 col-form-label">Nouvelle tâche :</label>
+              <div class="col-12 col-md-9">
+                <input type="text" class="form-control" id="taskToAdd" name="taskToAdd" aria-describedby="taskFieldHelp" placeholder="Une tâche à faire" required ngModel>
+              </div>
+              <button type="submit" class="btn btn-primary col-12 col-md-1" [disabled]="f.invalid">Ajouter</button>
+            </div>
+          </form>
         </div>
-      </fieldset>
-      <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Ajouter</button>
-    </form>
+      </div>
+    </div>
   </div>
 </div>
+
+<br>

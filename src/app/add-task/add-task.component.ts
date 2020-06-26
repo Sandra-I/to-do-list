@@ -9,31 +9,25 @@ import { TaskService } from '../service/task.service';
 })
 export class AddTaskComponent implements OnInit {
 
-  title: 'Ajouter une tâche';
+  // Titre associé au bouton
+  title = "Ajouter une tâche";
 
+  // Input pour la tâche à ajouter
   @Input() taskToAdd: string;
+
+  // Etat par défaut du bloc input = caché
+  public isCollapsed = true;
 
   constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
   }
 
+  // Méthode pour ajouter une tâche en passant la valeur de l'input au service
   public onAddTask(form: NgForm): void {
     this.taskToAdd = form.value['taskToAdd'];
     this.taskService.addTaskToDo(this.taskToAdd);
     console.log(this.taskService.getTaskArray());
   }
-
-  // A retravailler surement pour la modification
-  // public onAddTask(form: NgForm): string {
-  //   this.taskToAdd = form.value['taskToAdd'];
-  //   //this.cli.emit(this.taskToAdd);
-  //   this.cli.emit();
-  //   console.log(form.value['taskToAdd']);
-  //   return this.taskToAdd;
-  // }
-    // A retravailler
-  // @Output()
-  // cli: EventEmitter<string> = new EventEmitter();
 
 }

@@ -9,9 +9,10 @@
     <ul class="list-group list-group-flush">
 
       <tdl-task-to-do
-       *ngFor="let task of taskArray"
+       *ngFor="let task of taskArray; let i = index"
        [name]="task.name"
-       [status]="task.doneStatus"></tdl-task-to-do>
+       [status]="task.doneStatus"
+       [id]="task.id"></tdl-task-to-do>
 
     </ul>
   </div>

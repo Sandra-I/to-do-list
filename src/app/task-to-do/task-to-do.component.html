@@ -2,16 +2,22 @@
   <div class="row">
     <div class="col-sm-8">
       <p>{{name}}</p>
+      <p>Tâche n° : {{id}}</p>
     </div>
 
     <!-- Penser à gèrer l'affichage de ce bloc si tâche ajoutée -->
     <div class="col-sm-4">
-      <button type="button" class="btn btn-outline-primary btn-lg col-sm-4"><i class="material-icons d-flex justify-content-center">
+      <!-- Bouton Modifier -->
+      <button
+       type="button" class="btn btn-outline-primary btn-lg col-sm-4"><i class="material-icons d-flex justify-content-center">
         edit
       </i></button>
-      <button type="button" class="btn btn-outline-primary btn-lg col-sm-4"><i class="material-icons d-flex justify-content-center">
+      <!-- Bouton Supprimer -->
+      <button
+       type="button" class="btn btn-outline-primary btn-lg col-sm-4"><i class="material-icons d-flex justify-content-center">
         delete_forever
       </i></button>
+      <!-- Bouton Tâche faite -->
       <button type="button" class="btn btn-outline-primary btn-lg col-sm-4"><i class="material-icons d-flex justify-content-center">
         done_outline
       </i></button>

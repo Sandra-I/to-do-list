@@ -9,6 +9,7 @@ export class TaskDoneComponent implements OnInit {
 
   @Input() name: string;
   @Input() status: boolean;
+  @Input() id: number;
 
   constructor() { }
 

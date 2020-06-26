@@ -10,6 +10,7 @@ import { DoneTasksListComponent } from './done-tasks-list/done-tasks-list.compon
 import { TaskDoneComponent } from './task-done/task-done.component';
 import { TaskToDoComponent } from './task-to-do/task-to-do.component';
 import { ContentComponent } from './content/content.component';
+import { TaskService } from './service/task.service';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { ContentComponent } from './content/content.component';
     FormsModule,
     NgbModule
   ],
-  providers: [],
+  providers: [TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
