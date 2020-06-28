@@ -23,6 +23,7 @@ export class TaskToDoComponent implements OnInit {
   }
 
   // Méthode pour supprimer une tâche de la liste
+  // Penser à rajouter une alerte pour confirmer le choix
   removeTask(id: number) {
     this.taskService.deleteTask(id);
   }

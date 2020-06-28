@@ -48,19 +48,20 @@ export class TaskService {
     this.taskArray.push(newTask);
   }
 
+  // Méthode pour changer le statut d'un tâche à vrai (donc à true)
   editTask(str: string, id: number) {
-    return this.taskArray.find[id].name = str;
+
   }
 
   // Méthode pour supprimer une tâche définitivement de la liste à faire
-  // Penser à rajouter une alerte pour confirmer le choix
   deleteTask(id: number) {
     this.taskArray.splice(id, 1);
-    console.log(this.taskArray);
   }
 
   // Méthode pour changer le statut d'un tâche à vrai (donc à true)
   doneTaskStatus(id: number) {
-    this.taskArray.find[id].doneStatus = true;
+    const x = this.taskArray.find(
+      task => task.id === id + 1
+    ).doneStatus = true;
   }
 }
