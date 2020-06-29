@@ -11,6 +11,8 @@ import { TaskDoneComponent } from './task-done/task-done.component';
 import { TaskToDoComponent } from './task-to-do/task-to-do.component';
 import { ContentComponent } from './content/content.component';
 import { TaskService } from './service/task.service';
+import { TaskInProgressComponent } from './task-in-progress/task-in-progress.component';
+import { CurrentTasksListComponent } from './current-tasks-list/current-tasks-list.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { TaskService } from './service/task.service';
     DoneTasksListComponent,
     TaskDoneComponent,
     TaskToDoComponent,
-    ContentComponent
+    ContentComponent,
+    TaskInProgressComponent,
+    CurrentTasksListComponent
   ],
   imports: [
     BrowserModule,

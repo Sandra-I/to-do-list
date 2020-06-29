@@ -8,18 +8,29 @@ import { TaskService } from '../service/task.service';
 })
 export class TaskToDoComponent implements OnInit {
 
+  // Les différents données requises pour l'affichage d'une tâche
   @Input() name: string;
-  @Input() status: string;
+  @Input() status: boolean;
   @Input() id: number;
+  @Input() index: number;
+
+  // Etat par défaut du bloc input = caché
+  public isCollapsed = true;
 
   constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
   }
 
-  // Méthode pour changer le statut d'une tâche
-  changeStatus(id: number) {
-    this.taskService.doneTaskStatus(id);
+  // Méthode pour changer le nom de la tâche
+  editTaskName(id: number, name: string) {
+    this.taskService.editTask(id, name);
+    this.isCollapsed = true;
+  }
+
+  // Méthode pour changer le statut d'une tâche (en cours)
+  changeStatusProgress(id: number) {
+    this.taskService.inProgressTaskStatus(id);
   }
 
   // Méthode pour supprimer une tâche de la liste

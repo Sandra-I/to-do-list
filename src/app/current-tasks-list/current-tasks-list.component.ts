@@ -2,16 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../service/task.service';
 
 @Component({
-  selector: 'tdl-done-tasks-list',
-  templateUrl: './done-tasks-list.component.html',
-  styleUrls: ['./done-tasks-list.component.scss']
+  selector: 'tdl-current-tasks-list',
+  templateUrl: './current-tasks-list.component.html',
+  styleUrls: ['./current-tasks-list.component.scss']
 })
-export class DoneTasksListComponent implements OnInit {
+export class CurrentTasksListComponent implements OnInit {
 
   // Titre du contenu
-  title = 'Tâches faites';
+  title = "Tâches en cours";
 
-  // Attribut permettant de stocker le table des tâches
+  // Attribut pour récupérer le tableau des tâches
   taskArray: any[];
 
   constructor(private taskService: TaskService) { }
@@ -19,4 +19,5 @@ export class DoneTasksListComponent implements OnInit {
   ngOnInit(): void {
     this.taskArray = this.taskService.getTaskArray();
   }
+
 }

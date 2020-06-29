@@ -28,7 +28,6 @@ export class AddTaskComponent implements OnInit {
     this.taskToAdd = form.value['taskToAdd'];
     this.taskService.addTaskToDo(this.taskToAdd);
     this.taskToAdd = '';
-    console.log(this.taskService.getTaskArray());
   }
 
 }

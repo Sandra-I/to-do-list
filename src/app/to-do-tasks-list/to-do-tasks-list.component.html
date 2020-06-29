@@ -1,20 +1,27 @@
-<div class="row">
-  <span class="col-sm-12 d-flex justify-content-center">
-    <h3>{{title}}</h3>
-  </span>
-</div>
+<!-- Component gérant la liste des tâches à faire -->
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <span class="col-sm-12 d-flex justify-content-center">
+        <h3 class="card-title">{{title}}</h3>
+      </span>
+    </div>
 
-<div class="row">
-  <div class="col-sm-12">
-    <ul class="list-group list-group-flush">
-      <tdl-task-to-do
-       *ngFor="let task of taskArray; let i = index"
-       [name]="task.name"
-       [status]="task.doneStatus"
-       [id]="i"></tdl-task-to-do>
-    </ul>
+    <div class="row">
+      <div class="col-sm-12">
+        <ul class="list-group list-group-flush">
+          <tdl-task-to-do
+           *ngFor="let task of taskArray; let i = index"
+           [name]="task.name"
+           [status]="task.doneStatus"
+           [id]="task.id"
+           [index]="i"
+           ></tdl-task-to-do>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- A intégrer -->
+<!-- A intégrer et retravailler -->
 <!-- <p *ngIf="taskArray.length<0">Aucune tâche à réaliser pour le moment !</p> -->

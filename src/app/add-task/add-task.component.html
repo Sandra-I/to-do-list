@@ -1,3 +1,5 @@
+<!-- Component gérant uniquement la zone d'ajout d'une tâche -->
+<!-- Bouton cliquable pour l'affichage de l'input pour entrer une nouvelle tâche -->
 <div class="row">
   <div class="col-12">
     <div class="d-flex justify-content-center">
@@ -12,7 +14,8 @@
 </div>
 </div>
 
-<div id="collapseExample" [ngbCollapse]="isCollapsed">
+<!-- Zone pour entrer une nouvelle tâche -->
+<div id="addTaskForm" [ngbCollapse]="isCollapsed">
   <div class="row">
     <div class="col-12">
       <div class="card">

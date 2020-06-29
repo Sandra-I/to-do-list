@@ -4,28 +4,18 @@ export class TaskService {
   private taskArray = [
     {
       id:  1,
-      name : "Service ok",
+      name : "Test tâche",
       doneStatus : false
     },
     {
       id:  2,
-      name : "Service 2 ok",
-      doneStatus : false
+      name : "Test une autre tâche",
+      doneStatus : null
     },
     {
       id:  3,
-      name : "Service 3 ok",
+      name : "Test encore une autre tâche",
       doneStatus : true
-    },
-    {
-      id:  4,
-      name : "Service 4 ok",
-      doneStatus : true
-    },
-    {
-      id:  5,
-      name : "Service 5 ok",
-      doneStatus : false
     }
   ];
 
@@ -43,14 +33,16 @@ export class TaskService {
       doneStatus: null
     }
     newTask.name = str;
-    newTask.doneStatus = false;
+    newTask.doneStatus = null;
     newTask.id = this.taskArray[(this.taskArray.length)-1].id +1;
     this.taskArray.push(newTask);
   }
 
   // Méthode pour changer le statut d'un tâche à vrai (donc à true)
-  editTask(str: string, id: number) {
-
+  editTask(id: number, str: string) {
+    this.taskArray.find(
+      task => task.id === id
+    ).name = str;
   }
 
   // Méthode pour supprimer une tâche définitivement de la liste à faire
@@ -60,8 +52,15 @@ export class TaskService {
 
   // Méthode pour changer le statut d'un tâche à vrai (donc à true)
   doneTaskStatus(id: number) {
-    const x = this.taskArray.find(
-      task => task.id === id + 1
+    this.taskArray.find(
+      task => task.id === id
     ).doneStatus = true;
+  }
+
+  // Méthode pour changer le statut d'un tâche à faux (donc à false)
+  inProgressTaskStatus(id: number) {
+    this.taskArray.find(
+      task => task.id === id
+    ).doneStatus = false;
   }
 }
