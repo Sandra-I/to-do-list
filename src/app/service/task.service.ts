@@ -46,6 +46,7 @@ export class TaskService {
   }
 
   // Méthode pour supprimer une tâche définitivement de la liste à faire
+  // A REVOIR
   deleteTask(id: number) {
     this.taskArray.splice(id, 1);
   }
