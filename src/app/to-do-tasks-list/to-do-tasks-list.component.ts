@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TaskService } from '../service/task.service';
+import { TaskService } from '../services/task.service';
 
 @Component({
   selector: 'tdl-to-do-tasks-list',

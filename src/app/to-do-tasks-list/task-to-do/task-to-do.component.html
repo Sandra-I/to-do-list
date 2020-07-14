@@ -1,14 +1,14 @@
 <!-- Pour afficher la tâche le statut doit être égal null -->
 <li *ngIf="status === null" class="list-group-item">
   <div class="row">
-    <div class="col-sm-7">
+    <div class="col-md-7 col-sm-12">
       <p>{{name}} | Id : {{id}} | Index : {{index}}</p>
     </div>
     <!-- Bloc de boutons d'actions sur la tâche -->
-    <div class="col-sm-5">
+    <div class="col-md-5 col-sm-12">
       <!-- Bouton Modifier qui est couplé avec la div contenant le champs de modification -->
       <button
-       type="button" class="btn btn-outline-primary btn-lg col-sm-4" ><i class="material-icons d-flex justify-content-center"
+       type="button" class="btn btn-outline-primary btn-lg col-md-4 col-sm-4" title="modifier"><i class="material-icons d-flex justify-content-center"
        (click)="isCollapsed = !isCollapsed"
       [attr.aria-expanded]="isCollapsed" aria-controls="editName">
         edit
@@ -16,13 +16,13 @@
 
       <!-- Bouton supprimer tâche -->
       <button
-       type="button" class="btn btn-outline-primary btn-lg col-sm-4"
-       (click)="removeTask(id)"><i class="material-icons d-flex justify-content-center">
+       type="button" class="btn btn-outline-primary btn-lg col-md-4 col-sm-4"
+       (click)="removeTask(id)"><i class="material-icons d-flex justify-content-center" title="supprimer">
         delete_forever
       </i></button>
 
-      <!-- Bouton tâche faite -->
-      <button type="button" class="btn btn-outline-primary btn-lg col-sm-4" id="lastButton" (click)="changeStatusProgress(id)"><i class="material-icons d-flex justify-content-center">
+      <!-- Bouton tâche en cours -->
+      <button type="button" class="btn btn-outline-primary btn-lg col-md-4 col-sm-4" title="en cours" id="lastButton" (click)="changeStatusProgress(id)"><i class="material-icons d-flex justify-content-center">
         hourglass_empty
       </i></button>
     </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TaskService } from '../service/task.service';
+import { TaskService } from '../services/task.service';
 
 @Component({
   selector: 'tdl-done-tasks-list',
@@ -9,7 +9,7 @@ import { TaskService } from '../service/task.service';
 export class DoneTasksListComponent implements OnInit {
 
   // Titre du contenu
-  title = 'Tâches faites';
+  title = 'Tâches terminées';
 
   // Attribut permettant de stocker le table des tâches
   taskArray: any[];
