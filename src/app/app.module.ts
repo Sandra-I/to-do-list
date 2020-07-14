@@ -26,7 +26,7 @@ const appRoutes: Routes = [
   { path: 'my-to-do-list', component: ContentComponent },
   { path: 'auth/signin', component: SigninComponent },
   { path: 'auth/signup', component: SignupComponent },
-  // { path: '', component: HomePageComponent },
+  { path: '', component: ContentComponent },
   { path: 'not-found', component: OupsComponent },
   //  Cette path doit toujours être à la fin pour ne pas qu'il se déclenche avant les autres
   // Angular regarde les routes dans l'ordre
