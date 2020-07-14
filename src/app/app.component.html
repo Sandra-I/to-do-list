@@ -1,9 +1,7 @@
+<!-- Header accessible par tous les utilisateurs -->
+<tdl-header></tdl-header>
 <!-- Component gérant le contenu de l'application -->
 <div class="container-fluid">
-  <tdl-header></tdl-header>
-  <tdl-add-task></tdl-add-task>
-  <tdl-content>
-    <tdl-to-do-tasks-list></tdl-to-do-tasks-list>
-    <tdl-done-tasks-list></tdl-done-tasks-list>
-  </tdl-content>
+  <!-- Indication de l'endroit où tout nouveau chargement de page doit se faire -->
+  <router-outlet></router-outlet>
 </div>

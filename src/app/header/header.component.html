@@ -1,8 +1,17 @@
 <!-- Component affichant le header de la page -->
-<div class="row">
-  <nav class="col-12 navbar navbar-expand-lg navbar-light bg-light justify-content-center">
-    <span class="navbar-brand">
-      <h1>&#9733; {{title}} &#9733;</h1>
-    </span>
-  </nav>
-</div>
+<nav class="navbar navbar-expand-md flex-md-row navbar-light bg-light">
+  <!-- Ancre vers home page -->
+  <a class="navbar-brand mb-0 h1" routerLinkActive="active" routerLink="home">&#9733; {{title}} &#9733;</a>
+
+  <!-- Bouton toggle responsive pour le menu -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="isCollapsed">
+    <div class="navbar-nav ml-md-auto">
+      <a class="nav-item nav-link" routerLinkActive="active" routerLink="auth/signup">Créer un compte</a>
+      <a class="nav-item nav-link" routerLinkActive="active" routerLink="auth/signin">Se connecter</a>
+    </div>
+  </div>
+</nav>
