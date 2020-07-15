@@ -23,10 +23,10 @@ import { AuthGardService } from './services/auth-gard.service';
 import { OupsComponent } from './oups/oups.component';
 
 const appRoutes: Routes = [
-  { path: 'my-to-do-list', component: ContentComponent },
   { path: 'auth/signin', component: SigninComponent },
   { path: 'auth/signup', component: SignupComponent },
-  { path: '', component: ContentComponent },
+  { path: 'my-to-do-list', canActivate: [AuthGardService] , component: ContentComponent },
+  { path: '', redirectTo: '/my-to-do-list', pathMatch: 'full' },
   { path: 'not-found', component: OupsComponent },
   //  Cette path doit toujours être à la fin pour ne pas qu'il se déclenche avant les autres
   // Angular regarde les routes dans l'ordre

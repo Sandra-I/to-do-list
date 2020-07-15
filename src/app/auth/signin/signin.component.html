@@ -1,18 +1,23 @@
-<div class="card">
-  <div class="card-body">
-    <form>
-      <fieldset>
-        <legend class="card-title">Connexion</legend>
-        <div class="form-group">
-          <label for="email">Addresse email :</label>
-          <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Entrez votre email">
-        </div>
-        <div class="form-group">
-          <label for="password">Mot de passe :</label>
-          <input type="password" class="form-control" id="password" placeholder="Mot de passe">
-        </div>
-        <button type="submit" class="btn btn-primary" title="valider">Se connecter</button>
-      </fieldset>
-    </form>
+<div class="row">
+  <div class="col-sm-8 offset-2">
+    <div class="card">
+      <div class="card-body">
+        <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+          <fieldset>
+            <legend class="card-title">Connexion</legend>
+            <div class="form-group">
+              <label for="email">Adresse email :</label>
+              <input type="email" class="form-control" id="email" formControlName="email" aria-describedby="emailHelp" placeholder="Entrez votre email">
+            </div>
+            <div class="form-group">
+              <label for="password">Mot de passe :</label>
+              <input type="password" class="form-control" id="password" formControlName="password" placeholder="Mot de passe">
+            </div>
+            <button type="submit" class="btn btn-primary" title="valider" [disabled]="signInForm.invalid">Se connecter</button>
+          </fieldset>
+        </form>
+        <p class="text-danger">{{ errorMessage }}</p>
+      </div>
+    </div>
   </div>
 </div>
