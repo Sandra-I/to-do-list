@@ -18,7 +18,7 @@ export class ToDoTasksListComponent implements OnInit {
 
   // A la création du compo on récupère le tableau de tâches
   ngOnInit(): void {
-    this.taskArray = this.taskService.getTaskArray();
+    this.taskArray = this.taskService.getTasksArray();
   }
 
 }

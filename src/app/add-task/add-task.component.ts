@@ -24,10 +24,11 @@ export class AddTaskComponent implements OnInit {
   }
 
   // Méthode pour ajouter une tâche en passant la valeur de l'input au service
-  public onAddTask(form: NgForm): void {
-    this.taskToAdd = form.value['taskToAdd'];
-    this.taskService.addTaskToDo(this.taskToAdd);
-    this.taskToAdd = '';
-  }
+  // A RETRAVAILLER
+  // public onAddTask(form: NgForm): void {
+  //   this.taskToAdd = form.value['taskToAdd'];
+  //   this.taskService.addTaskToDo(this.taskToAdd);
+  //   this.taskToAdd = '';
+  // }
 
 }

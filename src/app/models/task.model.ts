@@ -2,5 +2,5 @@
 export class Task {
 
   // syntaxe permettant l'utilisation du mot-clès new sans avoir définir les attributs avant le constructeur
-  constructor(public id: number, public name: string, public status: boolean) {}
+  constructor(public id: number, public name: string, public status?: boolean) {}
 }

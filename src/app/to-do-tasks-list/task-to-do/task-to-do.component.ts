@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TaskService } from '../../services/task.service';
+import { Task } from 'src/app/models/task.model';
 
 @Component({
   selector: 'tdl-task-to-do',
@@ -35,8 +36,8 @@ export class TaskToDoComponent implements OnInit {
 
   // Méthode pour supprimer une tâche de la liste
   // Penser à rajouter une alerte pour confirmer le choix
-  removeTask(id: number) {
-    this.taskService.deleteTask(id);
+  removeTask(task: Task) {
+    this.taskService.deleteTask(task);
   }
 
 }
