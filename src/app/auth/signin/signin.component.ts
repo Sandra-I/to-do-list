@@ -16,6 +16,7 @@ export class SigninComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) { }
 
   // A l'initialisation le formulaire se construit
+  // Utilisation d'une expression régulière pour avoir un mot de passe valide
   ngOnInit(): void {
     this.signInForm = this.formBuilder.group(
       {

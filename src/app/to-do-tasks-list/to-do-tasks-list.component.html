@@ -11,17 +11,18 @@
       <div class="col-sm-12">
         <ul class="list-group list-group-flush">
           <tdl-task-to-do
-           *ngFor="let task of taskArray; let i = index"
-           [name]="task.name"
-           [status]="task.doneStatus"
-           [id]="task.id"
-           [index]="i"
-           ></tdl-task-to-do>
+          *ngFor="let task of taskArray; let i = index"
+          [name]="task.name"
+          [status]="task.status"
+          [id]="task.id"
+          [index]="i"
+          ></tdl-task-to-do>
+          <!-- Si aucune tâche à réaliser -->
+          <div *ngIf="taskArray.length<=0">Aucune tâche à réaliser pour le moment !</div>
         </ul>
       </div>
     </div>
   </div>
 </div>
 
-<!-- A intégrer et retravailler -->
-<!-- <p *ngIf="taskArray.length<0">Aucune tâche à réaliser pour le moment !</p> -->
+

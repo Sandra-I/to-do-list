@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TaskService } from '../../services/task.service';
+import { Task } from 'src/app/models/task.model';
 
 @Component({
   selector: 'tdl-task-in-progress',
@@ -10,9 +11,12 @@ export class TaskInProgressComponent implements OnInit {
 
   // Les différents données requises pour l'affichage d'une tâche
   @Input() name: string;
-  @Input() status: boolean;
+  @Input() status: string;
   @Input() id: number;
   @Input() index: number;
+
+  // Statut requis pour que la tâche sois affichée
+  inProgressStatus = 'inProgress';
 
   constructor(private taskService: TaskService) { }
 

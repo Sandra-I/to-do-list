@@ -11,6 +11,7 @@ export class AuthGardService implements CanActivate {
   constructor(private router: Router) { }
 
   // Implémentation requise
+  // Méthode permettant si l'utilisateur est connecté de lui accorder l'accés à une route sinon on le redirige et on resolve false
   canActivate(): boolean | Observable<boolean> | Promise<boolean> {
     return new Promise(
       (resolve, reject) => {

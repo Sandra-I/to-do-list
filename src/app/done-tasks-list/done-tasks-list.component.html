@@ -13,7 +13,7 @@
           <tdl-task-done
           *ngFor="let task of taskArray; let i = index"
           [name]="task.name"
-          [status]="task.doneStatus"
+          [status]="task.status"
           [id]="task.id"
           [index]="i"></tdl-task-done>
         </ul>

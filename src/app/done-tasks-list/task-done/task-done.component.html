@@ -1,6 +1,6 @@
-<!-- Pour afficher la tâche le statut doit être égal à vrai -->
+<!-- Pour afficher la tâche le statut doit être done -->
 <li
  class="list-group-item"
- *ngIf="status">
- <p>{{name}} | Id : {{id}} | Index : {{index}}</p>
+ *ngIf="status === doneStatus">
+ <p>{{ name}}</p>
 </li>

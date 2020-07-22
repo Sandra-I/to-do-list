@@ -2,11 +2,12 @@ import { Task } from '../models/task.model';
 import { Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
+import DataSnapshot = firebase.database.DataSnapshot;
 
 @Injectable()
 export class TaskService {
 
-  // Le tableau des tâches
+  // Le tableau des tâches local
   tasksArray: Task[] = [];
   // Sujet qui va émettre le tableau ci-dessus
   tasksArraySubject = new Subject<Task[]> ();
@@ -20,63 +21,74 @@ export class TaskService {
     this.tasksArraySubject.next(this.tasksArray);
   }
 
-  // Méthode renvoyant le tableau de tâches
+  // Méthode récuperant le tableau de tâches sur le serveur
   // .on permet la réaction aux modifs dans la base de données par événement
+  // si l'array est vide on recevra un tableau vide
   getTasksArray(): any {
-    firebase.database().ref('/tasks').on('value', (data) => {
+    firebase.database().ref('/tasks')
+    .on('value', (data: DataSnapshot) => {
       this.tasksArray = data.val() ? data.val() : [];
       this.emitTasksArray();
-    }
+      }
     );
   }
 
-  // Méthode enregistrer la liste
+  // Méthode enregistrant le tableau des tâches sur le serveur
   // le set est une méthode fournit par Firebase pour ajouter dans la BDD l'argument fourni seulement s'il n'existe pas encore
   saveTasks() {
     firebase.database().ref('/tasks').set(this.tasksArray);
   }
 
-  // Méthode pour ajouter une tâche
+  // Méthode pour ajouter une nouvelle tâche
   addTaskToDo(newTask: Task) {
-    // newTask.status = null;
-    // newTask.id = this.tasksArray[(this.tasksArray.length)-1].id +1;
     this.tasksArray.push(newTask);
     this.saveTasks();
     this.emitTasksArray();
   }
 
-  // Méthode pour changer le statut d'un tâche à vrai (donc à true)
-  editTask(id: number, str: string) {
-    this.tasksArray.find(
-      task => task.id === id
-    ).name = str;
-  }
-
   // Méthode pour supprimer une tâche définitivement de la liste à faire
-  deleteTask(task: Task) {
+  deleteTask(id: number) {
     const taskIndexToRemove = this.tasksArray.findIndex(
       (taskEl) => {
-        if(taskEl === task) {
+        if(taskEl.id === id) {
           return true;
         }
       }
-      );
-      this.tasksArray.splice(taskIndexToRemove, 1);
-      this.saveTasks();
-      this.emitTasksArray();
+    );
+    this.tasksArray.splice(taskIndexToRemove, 1);
+    this.saveTasks();
+    this.emitTasksArray();
   }
 
-  // Méthode pour changer le statut d'un tâche à vrai (donc à true)
-  doneTaskStatus(id: number) {
+  // Méthode pour changer mettre à jour le nom d'une tâche
+  // veditTask(id: number, str: string) {
+  //   this.tasksArray.find(
+  //     task => task.id === id
+  //   ).name = str;
+  // }
+  editTask(id: number, str: string) {
     this.tasksArray.find(
-      task => task.id === id
-      ).status = true;
+      taskEl => taskEl.id === id
+    ).name = str;
+    this.saveTasks();
+    this.emitTasksArray();
   }
 
-  // Méthode pour changer le statut d'un tâche à faux (donc à false)
+  // Méthode pour passer à en cours le statut d'une tâche
   inProgressTaskStatus(id: number) {
     this.tasksArray.find(
-      task => task.id === id
-      ).status = false;
+      taskEl => taskEl.id === id
+    ).status = 'inProgress';
+    this.saveTasks();
+    this.emitTasksArray();
+  }
+
+  // Méthode pour passer à terminer le statut d'une tâche
+  doneTaskStatus(id: number) {
+    this.tasksArray.find(
+      taskEl => taskEl.id === id
+    ).status = 'done';
+    this.saveTasks();
+    this.emitTasksArray();
   }
 }

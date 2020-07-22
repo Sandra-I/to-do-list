@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { TaskService } from '../../services/task.service';
 import { Task } from 'src/app/models/task.model';
 
@@ -11,9 +12,12 @@ export class TaskToDoComponent implements OnInit {
 
   // Les différents données requises pour l'affichage d'une tâche
   @Input() name: string;
-  @Input() status: boolean;
+  @Input() status: string;
   @Input() id: number;
   @Input() index: number;
+
+  // Statut requis pour que la tâche sois affichée
+  toDoStatus = 'toDo';
 
   // Etat par défaut du bloc input = caché
   public isCollapsed = true;
@@ -24,7 +28,8 @@ export class TaskToDoComponent implements OnInit {
   }
 
   // Méthode pour changer le nom de la tâche
-  editTaskName(id: number, name: string) {
+  editTaskName(id: number, form: NgForm) {
+    const name = form.value['taskToUpdate'];
     this.taskService.editTask(id, name);
     this.isCollapsed = true;
   }
@@ -35,9 +40,13 @@ export class TaskToDoComponent implements OnInit {
   }
 
   // Méthode pour supprimer une tâche de la liste
-  // Penser à rajouter une alerte pour confirmer le choix
-  removeTask(task: Task) {
-    this.taskService.deleteTask(task);
+  // Avec une alerte pour confirmer le choix
+  removeTask(id: number) {
+    if(confirm('Etes-vous sûr de vouloir supprimer définitivement cette tâche ?')) {
+      this.taskService.deleteTask(id);
+    } else {
+      return null;
+    }
   }
 
 }

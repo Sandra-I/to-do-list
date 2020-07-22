@@ -8,9 +8,10 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
+  <!-- Bouton de connexion ou création de compte -->
   <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="isCollapsed">
     <div class="navbar-nav ml-md-auto">
-      <a class="nav-item nav-link" routerLinkActive="active" routerLink="auth/signup">Créer un compte</a>
+      <a *ngIf="!isAuth" class="nav-item nav-link" routerLinkActive="active" routerLink="auth/signup">Créer un compte</a>
       <a *ngIf="!isAuth" class="nav-item nav-link" routerLinkActive="active" routerLink="auth/signin">Connexion</a>
       <a *ngIf="isAuth" class="nav-item nav-link" (click)="onSignOut()" style="cursor:pointer">Déconnexion</a>
     </div>

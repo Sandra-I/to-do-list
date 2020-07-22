@@ -9,9 +9,12 @@ export class TaskDoneComponent implements OnInit {
 
   // Les différents données requises pour l'affichage d'une tâche
   @Input() name: string;
-  @Input() status: boolean;
+  @Input() status: string;
   @Input() id: number;
   @Input() index: number;
+
+  // Statut requis pour que la tâche sois affichée
+  doneStatus = 'done';
 
   constructor() { }
 

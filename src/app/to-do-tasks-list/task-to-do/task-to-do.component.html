@@ -1,8 +1,8 @@
-<!-- Pour afficher la tâche le statut doit être égal null -->
-<li *ngIf="status === null" class="list-group-item">
+<!-- Pour afficher la tâche le statut doit être égal toDo -->
+<li *ngIf="status === toDoStatus" class="list-group-item">
   <div class="row">
     <div class="col-md-7 col-sm-12">
-      <p>{{name}} | Id : {{id}} | Index : {{index}}</p>
+      <p>{{ name }}</p>
     </div>
     <!-- Bloc de boutons d'actions sur la tâche -->
     <div class="col-md-5 col-sm-12">
@@ -17,14 +17,9 @@
       <!-- Bouton supprimer tâche -->
       <button
        type="button" class="btn btn-outline-primary btn-lg col-md-4 col-sm-4"
-       ><i class="material-icons d-flex justify-content-center" title="supprimer">
-        delete_forever
-      </i></button>
-      <!-- <button
-       type="button" class="btn btn-outline-primary btn-lg col-md-4 col-sm-4"
        (click)="removeTask(id)"><i class="material-icons d-flex justify-content-center" title="supprimer">
         delete_forever
-      </i></button> -->
+      </i></button>
 
       <!-- Bouton tâche en cours -->
       <button type="button" class="btn btn-outline-primary btn-lg col-md-4 col-sm-4" title="en cours" id="lastButton" (click)="changeStatusProgress(id)"><i class="material-icons d-flex justify-content-center">
@@ -39,12 +34,12 @@
       <div class="col-12">
         <div class="card">
           <div class="card-body">
-            <form (ngSubmit)="editTaskName(id, f.value['taskToAdd'])" #f="ngForm">
+            <form (ngSubmit)="editTaskName(id, f)" #f="ngForm">
               <div class="form-group row">
                 <div class="col-12 col-md-9">
-                  <input type="text" class="form-control" id="taskToAdd" name="taskToAdd" aria-describedby="taskFieldHelp" placeholder="Nouveau nom pour la tâche !" required [(ngModel)]=name>
+                  <input type="text" class="form-control" id="taskToUpdate" name="taskToUpdate" aria-describedby="taskFieldHelp" placeholder="Nouveau nom pour la tâche !" required [(ngModel)]=name>
                 </div>
-                <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Valider</button>
+                <button type="submit" class="btn btn-primary" [disabled]="f.invalid" >Valider</button>
               </div>
             </form>
           </div>
