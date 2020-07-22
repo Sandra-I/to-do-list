@@ -21,6 +21,7 @@ import { TaskToDoComponent } from './to-do-tasks-list/task-to-do/task-to-do.comp
 import { AuthService } from './services/auth.service';
 import { AuthGardService } from './services/auth-gard.service';
 import { OupsComponent } from './oups/oups.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
 const appRoutes: Routes = [
   { path: 'auth/signin', component: SigninComponent },
@@ -47,7 +48,8 @@ const appRoutes: Routes = [
     TaskInProgressComponent,
     CurrentTasksListComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,

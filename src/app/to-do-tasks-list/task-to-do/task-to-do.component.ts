@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { TaskService } from '../../services/task.service';
-import { Task } from 'src/app/models/task.model';
 
 @Component({
   selector: 'tdl-task-to-do',

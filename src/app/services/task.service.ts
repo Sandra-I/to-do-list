@@ -61,11 +61,6 @@ export class TaskService {
   }
 
   // Méthode pour changer mettre à jour le nom d'une tâche
-  // veditTask(id: number, str: string) {
-  //   this.tasksArray.find(
-  //     task => task.id === id
-  //   ).name = str;
-  // }
   editTask(id: number, str: string) {
     this.tasksArray.find(
       taskEl => taskEl.id === id

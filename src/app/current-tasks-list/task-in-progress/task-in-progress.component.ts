@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TaskService } from '../../services/task.service';
-import { Task } from 'src/app/models/task.model';
 
 @Component({
   selector: 'tdl-task-in-progress',

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import * as firebase from 'firebase';
 import { AuthService } from '../services/auth.service';
 
@@ -7,7 +7,7 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
   // Titre de la page
   title = 'My To Do List';
 
@@ -31,8 +31,13 @@ export class HeaderComponent implements OnInit {
     );
   }
 
+  // Mthode de déconnexion
   onSignOut() {
     this.authService.signOutUser();
+  }
+
+  ngOnDestroy() {
+    this.onSignOut();
   }
 
 }

@@ -6,3 +6,8 @@
 
 /* Importing pulse theme. */
 @import "../node_modules/bootswatch/dist/pulse/bootswatch";
+
+// Couleur pour la barre de progression
+.progress-bar {
+  background-color: #593196 !important;
+}
