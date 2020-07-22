@@ -1,0 +1,16 @@
+<!-- Pour afficher la tâche le statut doit être égal inProgress -->
+<li *ngIf="status === inProgressStatus"
+class="list-group-item">
+<div class="row">
+  <div class="col-sm-10">
+    <p>{{ name }}</p>
+  </div>
+
+  <div class="col-sm-2">
+    <!-- Bouton tâche faite -->
+    <button type="button" class="btn btn-outline-primary btn-lg col-sm-12" title="terminée" id="lastButton" (click)="changeStatusDone(id)"><i class="material-icons d-flex justify-content-center">
+      done_outline
+    </i></button>
+  </div>
+</div>
+</li>

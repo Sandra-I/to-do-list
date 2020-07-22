@@ -1,18 +1,18 @@
+<!-- Component gérant uniquement la zone d'ajout d'une tâche -->
+<!-- Bouton cliquable pour l'affichage de l'input pour entrer une nouvelle tâche -->
 <div class="row">
   <div class="col-12">
     <div class="d-flex justify-content-center">
       <button type="button" class="btn btn-primary btn-md" (click)="isCollapsed = !isCollapsed"
-      [attr.aria-expanded]="isCollapsed" aria-controls="addTaskForm">
-      <p>{{title}}</p>
-      <i class="material-icons">
-        library_add
-      </i>
-    </button>
+      [attr.aria-expanded]="isCollapsed" aria-controls="addTaskForm" title="ajouter">
+      <p id="pTitle" class="h2">{{title}} <i class="material-icons" id="btnAdd">library_add</i></p>
+      </button>
+    </div>
   </div>
 </div>
-</div>
 
-<div id="collapseExample" [ngbCollapse]="isCollapsed">
+<!-- Zone pour entrer une nouvelle tâche -->
+<div id="addTaskForm" [ngbCollapse]="isCollapsed">
   <div class="row">
     <div class="col-12">
       <div class="card">
@@ -23,7 +23,7 @@
               <div class="col-12 col-md-9">
                 <input type="text" class="form-control" id="taskToAdd" name="taskToAdd" aria-describedby="taskFieldHelp" placeholder="Une tâche à faire" required [(ngModel)]="taskToAdd">
               </div>
-              <button type="submit" class="btn btn-primary col-12 col-md-1" [disabled]="f.invalid">Ajouter</button>
+              <button type="submit" title="valider" class="btn btn-primary col-12 col-md-1" [disabled]="f.invalid">Ajouter</button>
             </div>
           </form>
         </div>
@@ -31,5 +31,3 @@
     </div>
   </div>
 </div>
-
-<br>

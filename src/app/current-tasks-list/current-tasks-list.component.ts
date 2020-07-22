@@ -4,24 +4,23 @@ import { Task } from '../models/task.model';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'tdl-to-do-tasks-list',
-  templateUrl: './to-do-tasks-list.component.html',
-  styleUrls: ['./to-do-tasks-list.component.scss']
+  selector: 'tdl-current-tasks-list',
+  templateUrl: './current-tasks-list.component.html',
+  styleUrls: ['./current-tasks-list.component.scss']
 })
-export class ToDoTasksListComponent implements OnInit, OnDestroy {
+export class CurrentTasksListComponent implements OnInit, OnDestroy {
 
-  // Titre du compo
-  title = 'Tâches à faire';
+  // Titre du contenu
+  title = "Tâches en cours";
 
-  // Attribut où on va stocker un tableau de type Task
+  // Attribut pour récupérer le tableau des tâches
   taskArray: Task[];
 
-  // On fait appel à subscription pour souscrire au sujet du service
+  // On fait appel à subscription pour souscrire au sujet du service sans cela on ne recevra pas les mises à jour sur les tâches en BDD
   tasksSubscription: Subscription;
 
   constructor(private taskService: TaskService) { }
 
-  // A la création du compo on récupère le tableau de tâches
   ngOnInit() {
     this.tasksSubscription = this.taskService.tasksArraySubject.subscribe(
       (tasks: Task[]) => {

@@ -1,4 +1,4 @@
-<!-- Component gérant la liste des tâches faites-->
+<!-- Component gérant la liste des tâches en cours -->
 <div class="card">
   <div class="card-body">
     <div class="row">
@@ -10,12 +10,12 @@
     <div class="row">
       <div class="col-sm-12">
         <ul class="list-group list-group-flush">
-          <tdl-task-done
+          <tdl-task-in-progress
           *ngFor="let task of taskArray; let i = index"
           [name]="task.name"
           [status]="task.status"
           [id]="task.id"
-          [index]="i"></tdl-task-done>
+          [index]="i"></tdl-task-in-progress>
         </ul>
       </div>
     </div>

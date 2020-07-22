@@ -1,0 +1,51 @@
+<!-- Pour afficher la tâche le statut doit être égal toDo -->
+<li *ngIf="status === toDoStatus" class="list-group-item">
+  <div class="row">
+    <div class="col-md-7 col-sm-12">
+      <p>{{ name }}</p>
+    </div>
+    <!-- Bloc de boutons d'actions sur la tâche -->
+    <div class="col-md-5 col-sm-12">
+      <!-- Bouton Modifier qui est couplé avec la div contenant le champs de modification -->
+      <button
+       type="button" class="btn btn-outline-primary btn-lg col-md-4 col-sm-4" title="modifier"><i class="material-icons d-flex justify-content-center"
+       (click)="isCollapsed = !isCollapsed"
+      [attr.aria-expanded]="isCollapsed" aria-controls="editName">
+        edit
+      </i></button>
+
+      <!-- Bouton supprimer tâche -->
+      <button
+       type="button" class="btn btn-outline-primary btn-lg col-md-4 col-sm-4"
+       (click)="removeTask(id)"><i class="material-icons d-flex justify-content-center" title="supprimer">
+        delete_forever
+      </i></button>
+
+      <!-- Bouton tâche en cours -->
+      <button type="button" class="btn btn-outline-primary btn-lg col-md-4 col-sm-4" title="en cours" id="lastButton" (click)="changeStatusProgress(id)"><i class="material-icons d-flex justify-content-center">
+        hourglass_empty
+      </i></button>
+    </div>
+  </div>
+
+  <!-- Div fermé contenant la zone de modification du nom d'une tâche -->
+  <div id="editName" [ngbCollapse]="isCollapsed">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <form (ngSubmit)="editTaskName(id, f)" #f="ngForm">
+              <div class="form-group row">
+                <div class="col-12 col-md-9">
+                  <input type="text" class="form-control" id="taskToUpdate" name="taskToUpdate" aria-describedby="taskFieldHelp" placeholder="Nouveau nom pour la tâche !" required [(ngModel)]=name>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="f.invalid" >Valider</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</li>
